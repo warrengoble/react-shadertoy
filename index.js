@@ -86,11 +86,19 @@ export default ({
 
     // TODO Handle channnels here.
 
-    // Clean up loader to load from network might do that already?
-    const texture = new TextureLoader().load("/static/sky.jpg");
-
     const uniforms = {
-      ...(iChannel0 ? { iChannel0: new Uniform(texture) } : {}),
+      ...(iChannel0
+        ? { iChannel0: new Uniform(new TextureLoader().load(iChannel0)) }
+        : {}),
+      ...(iChannel1
+        ? { iChannel1: new Uniform(new TextureLoader().load(iChannel1)) }
+        : {}),
+      ...(iChannel2
+        ? { iChannel2: new Uniform(new TextureLoader().load(iChannel2)) }
+        : {}),
+      ...(iChannel3
+        ? { iChannel3: new Uniform(new TextureLoader().load(iChannel3)) }
+        : {}),
       iResolution: new Uniform(new Vector2(width, height)),
       iTime: { value: 0 }
     };
