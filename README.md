@@ -1,6 +1,14 @@
 ## Shadertoy React Component
 
+NOTE:  This is still a work in progress and not yet functioning.
+
 This component using WebGL and Three.js to create a React component that uses the Shadertoy format.
+
+Only works with `Image` script at the moment. Other scripts coming see TODO.
+
+### Issues
+
+TODO
 
 ### Usage
 
@@ -24,6 +32,7 @@ export default ({ width, height }) => {
 
 ### TODO
 
-- Create npm package
-- Get other types working such as Buffer, Video, and Cubemap
--
+- Create NPM package.
+- Other types if iChannels (Input) working such as Buffer, Video, Sound and Cubemap.
+- Additional uniforms working such as `iDate`, `iMouse`, `iChannelResolution`, `iChannelTime`, `iTimeDelta` and `iSampleRate`.
+- Additional scripts such as `Common`, `Sound`, `Buffer A`, `Buffer B`, `Buffer C`, `Buffer D` and `Cubemap A`.
