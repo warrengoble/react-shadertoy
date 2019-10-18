@@ -1,0 +1,28 @@
+{
+  "name": "react-shadertoy",
+  "version": "1.0.0",
+  "description": "React Shadertoy Component",
+  "main": "dist/index.js",
+  "scripts": {
+    "prepare": "npm run build",
+    "build": "webpack index.js dist/index.js",
+    "dev": "webpack index.js dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/warrengoble/react-shadertoy.git"
+  },
+  "keywords": [
+    "React",
+    "Shadertoy"
+  ],
+  "author": "Warren Goble",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/warrengoble/react-shadertoy/issues"
+  },
+  "homepage": "https://github.com/warrengoble/react-shadertoy#readme",
+  "dependencies": {
+    "three": "^0.109.0"
+  }
+}
