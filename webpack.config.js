@@ -5,9 +5,11 @@ module.exports = {
   mode: "production",
   output: {
     path: path.join(__dirname, "dist"),
+    library: "ReactShadertoy",
+    libraryTarget: "umd",
     filename: "index.js"
   },
-  //   target: "node",
+  target: "web",
   module: {
     rules: [
       {
@@ -18,6 +20,5 @@ module.exports = {
         }
       }
     ]
-  },
-  externals: [nodeExternals()]
+  }
 };
