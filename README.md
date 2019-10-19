@@ -10,10 +10,14 @@ Only works with Image script at the moment and iChannels work with textures only
 
 #### Installing
 
-Can install directly from Github repo. NPM package coming. Please install `react` and `react-dom` in main appication because a version is not package in this library.
+NPM package coming. Please install `react` and `react-dom` in main appication because it's not packaged in this library.
 
-```bash
-npm install git@github.com:warrengoble/react-shadertoy.git
+Can install directly from Github repo just included the following dependencies in your `package.json` file. Then you can run `npm install`.
+
+```json
+"dependencies": {
+  "react-shadertoy": "github:warrengoble/react-shadertoy#master",
+}
 ```
 
 #### Code Example
