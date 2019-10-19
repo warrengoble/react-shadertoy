@@ -71,11 +71,9 @@ export default ({
   iChannel3
 }) => {
   const webGlRef = useRef();
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [{ renderer, uniforms }, setMount] = useState({});
 
   useEffect(() => {
-    console.log("Mounting");
-
     const renderer = new WebGLRenderer({ antialias: false });
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(width, height);
@@ -85,7 +83,6 @@ export default ({
     const geometry = new PlaneBufferGeometry(2, 2);
 
     // TODO Handle channnels here.
-
     const uniforms = {
       ...(iChannel0
         ? { iChannel0: new Uniform(new TextureLoader().load(iChannel0)) }
@@ -117,30 +114,26 @@ export default ({
 
     webGlRef.current.appendChild(renderer.domElement);
 
-    let time = 0;
-    const animate = () => {
+    let renderFrame = true;
+    const animate = time => {
+      renderFrame && requestAnimationFrame(animate);
       uniforms.iTime.value = parseInt(time) / 1000;
 
       renderer.render(scene, camera);
-
-      time = time + 33; // FIXME Use animationFrame
     };
 
-    // FIXME Handle using animationFrame
-    const interval = setInterval(animate, 33); // 30 frames a sec
+    setMount({ renderer, uniforms });
+
+    requestAnimationFrame(animate);
 
     return () => {
-      // FIXME Use animationFrame
-      clearInterval(interval);
+      renderFrame = false;
     };
   }, []);
 
   useMemo(() => {
-    const { renderer, uniforms } = state;
-
     if (renderer) {
       renderer.setSize(width, height);
-
       uniforms.iResolution = {
         value: [parseInt(width), parseInt(height)]
       };
