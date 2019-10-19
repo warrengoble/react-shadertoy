@@ -4,7 +4,7 @@ module.exports = {
   entry: ["./index"],
   mode: "production",
   output: {
-    path: path.join(__dirname, "dist"),
+    path: path.resolve(__dirname, "dist/"),
     library: "ReactShadertoy",
     libraryTarget: "umd",
     filename: "index.js"
