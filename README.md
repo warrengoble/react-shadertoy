@@ -1,14 +1,10 @@
 ## Shadertoy React Component
 
-NOTE:  This is still a work in progress and not yet functioning.
+NOTE: This is still a work in progress and oes not fully support all functions of Shadertoy format.
 
 This component using WebGL and Three.js to create a React component that uses the Shadertoy format.
 
 Only works with `Image` script at the moment. Other scripts coming see TODO.
-
-### Issues
-
-TODO
 
 ### Usage
 
@@ -25,8 +21,15 @@ npm install git@github.com:warrengoble/react-shadertoy.git
 ```javascript
 import ReactShadertoy from "react-shadertoy";
 
-export default ({ width, height }) => {
-  <ReactShadertoy width={width} height={height} />;
+export default ({ width, height, textureUrl }) => {
+  <ReactShadertoy
+    width={width}
+    height={height}
+    iChannel0={textureUrl0}
+    iChannel1={textureUrl1}
+    iChannel2={textureUrl2}
+    iChannel3={textureUrl3}
+  />;
 };
 ```
 
