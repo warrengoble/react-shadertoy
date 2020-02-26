@@ -16,8 +16,8 @@ Can install directly from Github repo just included the following dependencies i
 
 ```json
 "dependencies": {
-  "react": "^16.9.0",
-  "react-dom": "^16.9.0",
+  "react": "^16.10.2",
+  "react-dom": "^16.10.2",
   "react-shadertoy": "github:warrengoble/react-shadertoy#master",
 }
 ```
